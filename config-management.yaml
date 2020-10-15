@@ -1,9 +1,21 @@
-environment: "Comming from DCM"
-customer:
-       accounts: "SBI, ICICI, HDFC"
-       firstname: "Achu"
-       lastname: "Pattnaik"
-       dbValues:
-               "{dbConnection : 'http://192.168.52.222', dbPort: '1111', dbUser: 'Achu111'}"
+env.name: DEV
+app.name: spring-boot-configuration ${env.name}
 
-management:endpoints.web.exposure.include : "*"
+list:
+  values: DEV, ENV, CLEAN
+
+map:
+  values: "{key: 'QA_ENV', value: 'Profile Testing'}"
+
+db:
+  connection: http://DEV:8082
+  username: userdev
+  password: passworddev
+  port: 9001
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
